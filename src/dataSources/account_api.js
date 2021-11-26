@@ -8,7 +8,8 @@ class AccountAPI extends RESTDataSource {
     }
 
     async createAccount(account) {
-        account = new Object(JSON.parse(JSON.stringify(account)));
+        console.log("\n-*-*- Paso 2 - Llamando DataSource Account_ms");
+        console.log("\n🤑 Objeto enviado crear cuenta\n", account)
         return await this.post('/accounts', account);
     }
 
@@ -17,10 +18,11 @@ class AccountAPI extends RESTDataSource {
     }
 
     async createTransaction(transaction) {
-        transaction = new Object(JSON.parse(JSON.stringify(transaction)));
+        console.log("\n-*-*- Paso 2 - Llamando DataSource Account_ms");
+        console.log("\n🤑 Objeto enviado transaction\n", transaction)
         return await this.post('/transactions', transaction);
     }
-    
+
     async transactionByUsername(username) {
         return await this.get(`/transactions/${username}`);
     }

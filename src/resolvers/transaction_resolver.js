@@ -11,6 +11,8 @@ const transactionResolver = {
     },
     Mutation: {
         createTransaction: async (_, { transaction }, { dataSources, userIdToken }) => {
+            console.log("\n-*-*- 🟢- Llamando Resolver...", userIdToken);
+
             usernameToken = (await dataSources.authAPI.getUser(userIdToken)).username
             if (transaction.usernameOrigin == usernameToken)
                 return dataSources.accountAPI.createTransaction(transaction)

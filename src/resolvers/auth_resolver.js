@@ -10,6 +10,7 @@ const usersResolver = {
     },
     Mutation: {
         signUpUser: async (_, { userInput }, { dataSources }) => {
+            console.log("\n-*-*- 🟢- Llamando Resolver...");
             const accountInput = {
                 username: userInput.username,
                 balance: userInput.balance,

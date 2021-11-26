@@ -5,4 +5,5 @@ const authTypeDefs = require('./auth_type_defs');
 //Se unen
 const schemasArrays = [authTypeDefs, accountTypeDefs, transactionTypeDefs];
 //Se exportan
+console.log("\n------- Typedef -------\n")
 module.exports = schemasArrays;
