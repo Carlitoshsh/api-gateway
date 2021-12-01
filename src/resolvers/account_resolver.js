@@ -8,6 +8,16 @@ const accountResolver = {
                 return null
 
         },
+        // Implementar un admin
+        accountByBalance: async (_, { balance }, { dataSources }) => {
+            return await dataSources.accountAPI.accountByBalance(balance)
+        },
+        getAllAccount: async (_, __, { dataSources }) => {
+            return await dataSources.accountAPI.getAllAccount()
+        },
+        getPokemon: async (_, { pokemonId }, { dataSources }) => {
+            return await dataSources.accountAPI.getPokemonById(pokemonId)
+        },
     },
     Mutation: {}
 };

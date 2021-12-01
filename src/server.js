@@ -1,4 +1,4 @@
 module.exports = {
-    auth_api_url: 'https://mision-tic-auth-ms.herokuapp.com',
-    account_api_url: 'https://mision-tic-account-ms.herokuapp.com',
+    auth_api_url: 'https://backend-auth-ms-p53.herokuapp.com',
+    account_api_url: 'https://account-ms-formador-p53.herokuapp.com',
 };

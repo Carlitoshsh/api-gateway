@@ -8,6 +8,8 @@ const accountTypeDefs = gql`
     }
     extend type Query {
         accountByUsername(username: String!): Account
+        accountByBalance(balance: Int!): Account
+        getAllAccount: [Account]
     }
 `;
 

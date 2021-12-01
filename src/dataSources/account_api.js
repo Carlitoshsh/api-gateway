@@ -26,5 +26,18 @@ class AccountAPI extends RESTDataSource {
     async transactionByUsername(username) {
         return await this.get(`/transactions/${username}`);
     }
+
+    async accountByBalance(balance) {
+        return await this.get(`/accountByBalance/${balance}`);
+    }
+
+    async getAllAccount() {
+        return await this.get(`/getAllAccounts`);
+    }
+
+    async getPokemonById(pokemonId) {
+        return await this.get(`/getPokemon/${pokemonId}`);
+
+    }
 }
 module.exports = AccountAPI;

@@ -2,8 +2,9 @@
 const accountTypeDefs = require('./account_type_defs');
 const transactionTypeDefs = require('./transaction_type_defs');
 const authTypeDefs = require('./auth_type_defs');
+const pokemonTypeDefs = require('./pokemon_type_defs');
+
 //Se unen
-const schemasArrays = [authTypeDefs, accountTypeDefs, transactionTypeDefs];
+const schemasArrays = [authTypeDefs, accountTypeDefs, transactionTypeDefs, pokemonTypeDefs];
 //Se exportan
-console.log("\n------- Typedef -------\n")
 module.exports = schemasArrays;
