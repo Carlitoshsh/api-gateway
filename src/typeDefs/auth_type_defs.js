@@ -20,6 +20,7 @@ const authTypeDefs = gql`
         name: String!
         email: String!
         balance: Int!
+        role: Int!
     }
 
     type UserDetail {

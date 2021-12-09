@@ -9,11 +9,21 @@ const accountResolver = {
 
         },
         // Implementar un admin
-        accountByBalance: async (_, { balance }, { dataSources }) => {
-            return await dataSources.accountAPI.accountByBalance(balance)
+        accountByBalance: async (_, { balance }, { dataSources, rolIdToken }) => {
+            role = (await dataSources.authAPI.getUser(userIdToken)).role
+            if (rolIdToken == role && role == 1) {
+                return await dataSources.accountAPI.accountByBalance(balance)
+            } else {
+                return null
+            }
         },
-        getAllAccount: async (_, __, { dataSources }) => {
-            return await dataSources.accountAPI.getAllAccount()
+        getAllAccount: async (_, __, { dataSources, rolIdToken, userIdToken }) => {
+            role = (await dataSources.authAPI.getUser(userIdToken)).role
+            if (rolIdToken == role && role == 1) {
+                return await dataSources.accountAPI.getAllAccount()
+            } else {
+                return null
+            }
         },
         getPokemon: async (_, { pokemonId }, { dataSources }) => {
             return await dataSources.accountAPI.getPokemonById(pokemonId)

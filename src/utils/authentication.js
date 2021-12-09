@@ -23,7 +23,11 @@ const authentication = async ({ req }) => {
                 throw new ApolloError(`SESION INACTIVA - ${401}` + response.status, 401)
             }
             console.log("\n-*-*- 0️⃣😊- Llamando contexto de autenticacion resuelto ");
-            return { userIdToken: (await response.json()).UserId };
+            var theResponse = await response.json()
+            return {
+                userIdToken: theResponse.UserId,
+                rolIdToken: theResponse.RoleId
+            };
         }
         catch (error) {
             throw new ApolloError(`TOKEN ERROR: ${500}: ${error}`, 500);
