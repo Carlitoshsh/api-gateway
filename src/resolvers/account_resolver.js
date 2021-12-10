@@ -9,7 +9,7 @@ const accountResolver = {
 
         },
         // Implementar un admin
-        accountByBalance: async (_, { balance }, { dataSources, rolIdToken }) => {
+        accountByBalance: async (_, { balance }, { dataSources, rolIdToken, userIdToken }) => {
             role = (await dataSources.authAPI.getUser(userIdToken)).role
             if (rolIdToken == role && role == 1) {
                 return await dataSources.accountAPI.accountByBalance(balance)
